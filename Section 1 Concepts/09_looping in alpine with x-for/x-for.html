@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <title>Looping with alpine: x-for</title>
+    </head>
+
+    <body>
+        <!-- We can use x-for to loop through an array of data and to output the values 
+      There are two rules to follow to use x-for:
+      1. We need to use x-for on a <template> tag
+      2. <template> element will have only one root element. If we have multiple elements we can wrap everything up using a <div> to make that work.
+      -->
+
+        <!-- Let's loop through a array of numbers -->
+        <h1>Example 1</h1>
+        <ul
+            x-data="{
+        numbers: [1, 2, 3, 4]
+      }"
+        >
+            <template x-for="number in numbers">
+                <li x-text="number"></li>
+            </template>
+        </ul>
+
+        <!-- We can also access the index value by using syntax like this: 
+      ([item], [index]) in [items] -->
+        <h2>Example 2</h2>
+        <div
+            x-data="{
+        fruits: ['Apple', 'Banana', 'Berry', 'Mango']
+      }"
+        >
+            <template x-for="(fruit, index) in fruits">
+                <div>
+                    <span x-text="index"></span>
+                    <span x-text="fruit"></span>
+                </div>
+            </template>
+        </div>
+
+        <!-- We can loop/iterate through a range of values using x-for -->
+        <h2>Example 3</h2>
+        <ul x-data>
+            <template x-for="i in 10">
+                <li x-text="i"></li>
+            </template>
+        </ul>
+
+        <!-- Let's loop through an associative array using x-for -->
+        <h2>Example 4</h2>
+        <div
+            x-data="{
+          people: [
+            {id: 1, name: 'John', profession: 'Designer'},
+            {id: 2, name: 'Kevin', profession: 'Programmer'},
+            {id: 3, name: 'Agung', profession: 'Farmer'},
+          ]
+        }"
+            :key="person.id"
+        >
+            <template x-for="person in people">
+                <div>
+                    <span x-text="person.id"></span>
+                    <span x-text="person.name"></span>-
+                    <span x-text="person.profession"></span>
+                </div>
+            </template>
+        </div>
+    </body>
+</html>

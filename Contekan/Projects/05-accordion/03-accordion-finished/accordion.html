@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS Accordion</title>
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container" x-data="{ accordion: 1}">
+        <div class="single-acc">
+            <button @click="accordion !== 1 ? accordion = 1 : accordion = null">
+                <!-- Chevron Down -->
+                <svg :class="accordion == 1 ? 'hide' : 'show'" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+                <!-- Chevron Up -->
+                <svg :class="accordion == 1 ? 'show' : 'hide'" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+                Accordion 1
+            </button>
+            <div class="acc-content" x-ref="container1"
+                :style="accordion == 1 ? 'max-height: '+ $refs.container1.scrollHeight + 'px' : '' ">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore cumque animi ut dicta a ipsam
+                    reiciendis ad sit? Reprehenderit, autem?</p>
+            </div>
+        </div>
+        <div class="single-acc">
+            <button @click="accordion !== 2 ? accordion = 2 : accordion = null">
+                <!-- Chevron Down -->
+                <svg :class="accordion == 2 ? 'hide' : 'show'" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+                <!-- Chevron Up -->
+                <svg :class="accordion == 2 ? 'show' : 'hide'" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+                Accordion 2
+            </button>
+            <div class="acc-content" x-ref="container1"
+                :style="accordion == 2 ? 'max-height: '+ $refs.container1.scrollHeight + 'px' : '' ">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore cumque animi ut dicta a ipsam
+                    reiciendis ad sit? Reprehenderit, autem?</p>
+            </div>
+        </div>
+        <div class="single-acc">
+            <button @click="accordion !== 3 ? accordion = 3 : accordion = null">
+                <!-- Chevron Down -->
+                <svg :class="accordion == 3 ? 'hide' : 'show'" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+                <!-- Chevron Up -->
+                <svg :class="accordion == 3 ? 'show' : 'hide'" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+                Accordion 3
+            </button>
+            <div class="acc-content" x-ref="container1"
+                :style="accordion == 3 ? 'max-height: '+ $refs.container1.scrollHeight + 'px' : '' ">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore cumque animi ut dicta a ipsam
+                    reiciendis ad sit? Reprehenderit, autem?</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <title>x-if & x-if vs x-show</title>
+    </head>
+
+    <body>
+        <!-- x-if is kind of similar to the x-show directive of alpine js. Although there are some basic differences -->
+        <div x-data="{ show: true }">
+            <button @click="show = !show">Toogle</button>
+            <template x-if="show">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Exercitationem, alias enim ipsam quia minus non sint sunt
+                    soluta, animi reiciendis, sequi adipisci quidem totam
+                    eveniet? Minima, ullam reprehenderit. Reprehenderit, sed.
+                </p>
+            </template>
+        </div>
+
+        <div x-data="{ show: true }">
+            <button @click="show = !show">X-show Toogle</button>
+            <div x-show="show">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Exercitationem, alias enim ipsam quia minus non sint sunt
+                    soluta, animi reiciendis, sequi adipisci quidem totam
+                    eveniet? Minima, ullam reprehenderit. Reprehenderit, sed.
+                </p>
+            </div>
+        </div>
+
+        <!-- Bedanya adalah jika pake x-if, element akan hilang. Jika pake x-show tidak -->
+        <!-- Tag-nya juga berbeda, jika x-if pake template, x-show pake div -->
+
+        <!-- There is no else statement in alpine. But you can use is this way to make the similar effect -->
+
+        <!-- Mirip seperti if else -->
+        <div x-data="{ show: true }">
+            <button @click="show = !show">Toogle</button>
+            <template x-if="show">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Exercitationem, alias enim ipsam quia minus non sint sunt
+                    soluta, animi reiciendis, sequi adipisci quidem totam
+                    eveniet? Minima, ullam reprehenderit. Reprehenderit, sed.
+                </p>
+            </template>
+            <template x-if="!show">
+                <p>Lorem ipsum, dolor sit</p>
+            </template>
+        </div>
+    </body>
+</html>

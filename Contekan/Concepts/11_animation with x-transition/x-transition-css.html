@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+  <title>Animation in Alpine with x-transition and css classes</title>
+  <style>
+    .box{
+      height: 200px;
+      width: 200px;
+      background-color: blueviolet;
+    }
+    .transition{
+      transition: all .5s ease-in-out;
+    }
+    .enter-start{
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    .enter-end{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .leave-end{
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1. We got 6 directives
+       2. :enter = Applied during the entire entering phase. Transition properties should be added here.
+       3. :enter-start = Added before the animation starts, removed one frame after that. The initial state of animation should be added here.
+       4. :enter-end = Added one frame after the animation starts, removed when the animation finishes. The end state of animation should be added here.
+       5. :leave = Applied during the entire leaving phase. Transition properties should be added here.
+       6. :leave-start = Added before the animation starts, removed one frame after that. The initial state of animation should be added here.
+       7. :leave-end = Added one frame after the animation starts, removed when the animation finishes. The end state of animation should be added here.
+  -->
+
+  <div x-data="{ open: false }">
+    <button @click="open = ! open">Toggle</button>
+ 
+    <div class="box" x-show="open"
+      x-transition:enter="transition"
+      x-transition:enter-start="enter-start"
+      x-transition:enter-end="enter-end"
+
+      x-transition:leave="transition"
+      x-transition:leave-start="enter-end"
+      x-transition:leave-end="leave-end"
+    >
+        
+    </div>
+</div>
+
+
+</body>
+
+</html>

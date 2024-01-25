@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <title>x-bind and x-on shortcuts</title>
+        <style>
+            .bold {
+                font-weight: bold;
+            }
+
+            .green {
+                color: green;
+            }
+
+            .hidden {
+                display: none;
+            }
+
+            .show {
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- The shortcut for x-bind is (:) -->
+        <div x-data="{ myText: 'bold green' }">
+            <p :class="myText">Lorem ipsum mantap jiwa</p>
+        </div>
+
+        <!-- The shortcut for x-on is @ -->
+        <div x-data="{ isOpen: false }">
+            <p x-bind:class="isOpen ? 'show' : 'hidden'">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi,
+                illum animi! Praesentium, eaque. Rerum, suscipit! Eveniet nobis
+                rem esse necessitatibus.
+            </p>
+            <button @click="isOpen = !isOpen">Toggle</button>
+        </div>
+    </body>
+</html>

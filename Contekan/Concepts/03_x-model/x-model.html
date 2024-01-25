@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+  <title>x-model</title>
+</head>
+
+<body>
+  <!-- x-model is used for 2 way data binding in alpine js. We can get our data from any type of input fields like checkboxs, text inputs and use that value anywhere else inside the component -->
+  
+  <div x-data="{ name : ''}">
+    <!-- <label>Name: </label> -->
+    <!-- <input type="text" x-model="name"> -->
+    <!-- <p x-text="'My name is '+ name"></p> -->
+  </div>
+
+  <!-- The two way data binding even work in 2 different input fields -->
+  
+  <div x-data="{ name : ''}">
+    <!-- <input type="text" x-model="name"> -->
+    <!-- <input type="text" x-model="name"> -->
+  </div>
+
+  <!-- Let's see an example using select options -->
+  
+  <div x-data="{ myColor : ''}">
+    <select x-model="myColor">
+      <option value="">Select A Color</option>
+      <option value="Red">Red</option>
+      <option value="Green">Green</option>
+      <option value="Yellow">Yellow</option>
+    </select>
+    <p x-show="myColor"> My favourite color is: <span x-text="myColor"></span></p>
+  </div>
+  
+
+
+</body>
+
+</html>

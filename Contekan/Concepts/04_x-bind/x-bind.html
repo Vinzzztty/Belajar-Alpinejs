@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+  <title>x-bind</title>
+  <style>
+    .bold{
+      font-weight: bold;
+    }
+    .green{
+      color: green;
+    }
+    img{
+      max-width: 100%;
+    }
+    .hide{
+      display: none;
+    }
+    .show{
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- x-bind is used to bind/set any HTML attributes like class, id, placeholder, src, styles. In this example let's see how we can add multiple classes with x-bind -->
+
+  <div x-data="{myText: 'bold green'}">
+    <p x-bind:class="myText">Lorem ipsum dolor sit amet.</p>
+  </div>
+
+
+  <!-- We can add styles attributes also. By this way we can style an element without using external css -->
+
+  <div x-data="{ styles: {color: 'white', background: 'blue', padding: '4em'}}">
+    <div x-bind:style="styles">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aut dolorem quibusdam quo voluptas ullam quas, magni nisi dolores unde!
+    </div>
+  </div>
+
+
+  <!-- We can also showcase an image using the src attribute. It will come in handy while using an API. We can get the url from API and display it like this -->
+
+  <div x-data="{ image: 'https://images.unsplash.com/photo-1675309829140-b64547662fc4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80' }">
+    <img x-bind:src="image" alt="">
+  </div>
+
+
+  <!-- We can also bind classes based on conditions like ternary operators -->
+
+  <div x-data="{ isOpen: false }">
+    <p x-bind:class="isOpen ? 'show' : 'hide'">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, illum animi! Praesentium, eaque. Rerum, suscipit! Eveniet nobis rem esse necessitatibus.</p>
+    <button x-on:click="isOpen = !isOpen">Toggle</button>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

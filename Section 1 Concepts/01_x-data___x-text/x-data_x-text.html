@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <title>x-data & x-text</title>
+    </head>
+
+    <body>
+        <!-- Alpine starts with a x-data. We need to create an alpine 'component' first. x-data defines any kind of HTML element as an alpine component. It is a javascript object.-->
+        <div x-data="{ message: 'Hello world' }">
+            <div x-text="message"></div>
+        </div>
+
+        <!-- Not only divs, we can use any HTML element as an alpine component -->
+        <h1 x-data="{ message: 'Hello World Alpine.js'}" x-text="message"></h1>
+
+        <!-- We can add multiple variables, methods and even getters inside the x-data -->
+        <div x-data="userDetails()">
+            <ul>
+                <li x-text="name"></li>
+                <li x-text="age"></li>
+                <li x-text="email"></li>
+            </ul>
+        </div>
+
+        <!-- We can do the same thing like this also. But in this case we will be passing it as a function, not an object-->
+
+        <!-- <p>The asnwer in line 44</p> -->
+
+        <!-- Alpine js doesn't work outside the component -->
+        <div x-data="{ message: 'halo duni' }"></div>
+        <div x-text="message"></div>
+
+        <!-- But it will work in any nested component inside of it -->
+        <div x-data="{ message: 'Hello world' }">
+            <div x-data="{ message: 'Halo dunia'}">
+                <div x-data="{ message: 'halo slur'}">
+                    <div x-text="message"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inside x-text we can do any type of javascript things like concatenation, calculation etc -->
+        <div x-data="{ message: 'Hello world' }">
+            <div x-data="{ message2: 'Halo dunia'}">
+                <div x-data="{ message3: 'halo slur'}">
+                    <div x-text="message + ' ' + message2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The x-data can be empty too. It will still be considered as an alpine component -->
+        <div x-data="{}">
+            <div x-text="3*9"></div>
+        </div>
+
+        <script>
+            function userDetails() {
+                return {
+                    name: "John",
+                    age: 45,
+                    email: "johndoe@gmail.com",
+                };
+            }
+        </script>
+    </body>
+</html>

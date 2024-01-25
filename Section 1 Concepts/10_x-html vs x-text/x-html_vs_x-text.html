@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <title>x-html vs x-text</title>
+    </head>
+
+    <body>
+        <!-- x-html allows the html tags used inside it.This is almost same as x-text but x-text doesn't allow html tags while x-html does. -->
+        <div x-data="{ userName: '<strong>Admin</strong>'}">
+            <p>Username: <span x-text="userName"></span></p>
+            <p>Username: <span x-html="userName"></span></p>
+        </div>
+    </body>
+</html>

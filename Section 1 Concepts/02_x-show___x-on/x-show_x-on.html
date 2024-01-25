@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <title>x-show @ x-on</title>
+    </head>
+
+    <body>
+        <!-- We can display or hide any element inside an alpine component using x-show.-->
+        <div x-data="{ show: true }">
+            <!-- <p x-show="show">Display this text if 'show' is true</p> -->
+        </div>
+
+        <!-- Let's say you want to display something if the condition is true and another one if the condition is false-->
+
+        <!-- <p x-show="show">Display this text if 'show' is true.</p> -->
+        <!-- <p x-show="!show">Display this text if 'show' is false.</p> -->
+
+        <!-- x-on is used to listen to an event like 'click', 'keyup', 'keydown', 'submit' -->
+
+        <!-- <p x-show="show">Display this text if 'show' is true.</p> -->
+        <!-- <button x-on:click="show = true">Show</button> -->
+
+        <!-- We can toggle a state like this way -->
+
+        <!-- <p x-show="show">Display this text if 'show' is true.</p> -->
+        <!-- <button x-on:click="show = !show">toggle</button> -->
+
+        <!-- We can execute any custom javascript function based on that event too -->
+
+        <!-- <button x-on:click="alert('the button has been clicked!')">Alert</button> -->
+
+        <div x-data>
+            <button x-on:click="alert('the button has clicked')">
+                Click me
+            </button>
+        </div>
+
+        <div x-data="{ number: 0}">
+            <button x-on:click="number++">Incremenet</button>
+            <button x-on:click="number--" x-show="number > 0">Decrement</button>
+            <p x-text="number"></p>
+        </div>
+    </body>
+</html>
