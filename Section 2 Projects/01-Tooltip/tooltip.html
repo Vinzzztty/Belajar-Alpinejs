@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AlpineJS Tooltip</title>
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlpineJS Tooltip</title>
-    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <!-- Tooltip 1 Component -->
+        <div class="tooltip" x-data="{ tooltip: false }">
+            <button
+                x-on:mouseover="tooltip = true"
+                x-on:mouseleave="tooltip = false"
+            >
+                Hover Me
+            </button>
+            <div class="tooltipText" x-show="tooltip">This is a tooltip</div>
+        </div>
 
-<body>
-    <!-- Tooltip 1 Component -->
-
-
-    <!-- Tooltip 2 Component -->
-
-
-
-
-
-</body>
-
+        <!-- Tooltip 2 Component -->
+        <div class="tooltip" x-data="{ tooltip: false }">
+            <button x-on:click="tooltip =! tooltip">Click Me</button>
+            <div class="tooltipText" x-show="tooltip">This is a tooltip</div>
+        </div>
+    </body>
 </html>
