@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .navbar {
@@ -15,7 +15,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background: #18273E;
+    background: #18273e;
     color: white;
     position: relative;
 }
@@ -37,15 +37,15 @@ button svg {
 }
 
 .nav-item a {
-    color: #FFF;
+    color: #fff;
     text-decoration: none;
     padding: 7px 10px;
     border-radius: 4px;
-    transition: background-color .3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .nav-item a:hover {
-    background-color: #0072FF;
+    background-color: #0072ff;
 }
 
 @media only screen and (max-width: 600px) {
@@ -63,7 +63,7 @@ button svg {
 
     .nav {
         position: absolute;
-        background-color: #18273E;
+        background-color: #18273e;
         top: 71px;
         width: 100%;
         left: 0;
@@ -72,7 +72,6 @@ button svg {
 
     .nav-item {
         display: block;
-
     }
 
     .nav-item a {
@@ -81,6 +80,6 @@ button svg {
     }
 
     .nav-item a:hover {
-        background: #0072FF;
+        background: #0072ff;
     }
 }

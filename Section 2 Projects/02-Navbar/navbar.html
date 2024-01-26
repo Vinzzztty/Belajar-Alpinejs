@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AlpineJS Navbar</title>
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlpineJS Navbar</title>
-    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <nav class="navbar" x-data="{ isOpen: false }">
+            <div class="brand">VINZ</div>
+            <button>
+                <!-- Open Icon -->
+                <svg
+                    @click="isOpen = true"
+                    :class="isOpen ? 'hide' : 'show'"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+                    />
+                </svg>
+                <!-- Close Icon -->
+                <svg
+                    @click="isOpen = false"
+                    :class="isOpen ? 'show' : 'hide'"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6 18L18 6M6 6l12 12"
+                    />
+                </svg>
+            </button>
 
-<body>
-    
-
-
-
-
-</body>
-
+            <div class="nav" :class="isOpen ? 'show' : 'hide'">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">About me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </body>
 </html>
