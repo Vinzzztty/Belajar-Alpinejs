@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AlpineJS Tabs</title>
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlpineJS Tabs</title>
-    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <div class="container" x-data="{ tabOpen: 1 }">
+            <!-- Tab Buttons -->
+            <div class="tab-buttons">
+                <button
+                    @click="tabOpen = 1"
+                    :class="{ 'active' : tabOpen == 1 }"
+                    class="active"
+                >
+                    Tab One
+                </button>
+                <button @click="tabOpen = 2" :class="{ 'active': tabOpen == 2}">
+                    Tab Two
+                </button>
+                <button @click="tabOpen = 3" :class="{ 'active': tabOpen == 3}">
+                    Tab Three
+                </button>
+            </div>
 
-<body>
-    
-
-
-
-</body>
-
+            <!-- Tab Contents -->
+            <div class="tab-contents">
+                <div x-show="tabOpen === 1">
+                    <h3>Tab 1</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Maxime expedita, asperiores sapiente dolore deleniti vel
+                        vitae, ullam nemo quod aspernatur quos unde fuga qui
+                        adipisci laborum praesentium sequi. Dolorem,
+                        repudiandae!
+                    </p>
+                </div>
+                <div x-show="tabOpen === 2" x-cloak>
+                    <h3>Tab 2</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Consequatur ipsum optio ex eum necessitatibus laborum
+                        quam a dolore nulla accusantium.
+                    </p>
+                </div>
+                <div x-show="tabOpen === 3" x-cloak>
+                    <h3>Tab 3</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Minima, repudiandae laudantium corporis quas,
+                        facilis voluptatum hic id a dolorum in eveniet saepe
+                        harum quo est minus et quaerat sunt aspernatur libero
+                        illum amet nam. Doloremque mollitia animi facilis odit
+                        vitae, pariatur nihil eaque porro veniam, vero optio
+                        explicabo accusamus aspernatur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
