@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -14,5 +13,59 @@ body {
     align-items: center;
     min-height: 100vh;
     gap: 20px;
-    background: #F7FAFC;
+    background: #f7fafc;
+}
+
+.container {
+    max-width: 760px;
+    background-color: #ffff;
+    margin: 0 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 10px 10px 48px -19px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    padding: 30px;
+    transition: background-color 0.3 ease;
+    border-bottom: 1px solid rgba(185, 185, 185, 0.4);
+}
+
+button:hover {
+    background-color: #d4d4d4;
+}
+
+button svg {
+    height: 16px;
+    position: absolute;
+    right: 40px;
+}
+
+.acc-content {
+    max-height: 0;
+    transition: all 0.5 ease-in-out;
+    overflow: hidden;
+}
+
+.acc-content p {
+    padding: 30px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+.single-acc:not(:first-child) button {
+    border-top: 1px solid rgba(185, 185, 185, 0.4);
 }

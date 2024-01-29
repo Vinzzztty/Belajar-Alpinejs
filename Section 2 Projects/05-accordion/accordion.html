@@ -1,20 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AlpineJS Accordion</title>
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+        ></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlpineJS Accordion</title>
-    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-
-
-
-</body>
-
+    <body>
+        <div class="container" x-data="{ accordion: 1 }">
+            <div class="single-acc">
+                <button
+                    @click="accordion !== 1 ? accordion = 1 : accordion = null"
+                >
+                    <!-- Chevron up -->
+                    <svg
+                        :class="accordion == 1 ? 'hide' : 'show' "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+                        />
+                    </svg>
+                    <!-- Chevron down -->
+                    <svg
+                        :class="accordion == 1 ? 'show' : 'hide' "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        />
+                    </svg>
+                    Accordion 1
+                </button>
+                <div
+                    class="acc-content"
+                    x-ref="container1"
+                    :style="accordion == 1 ? 'max-height:' + $refs.container1.scrollHeight + 'px' : '' "
+                >
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Vel ad odit quod at, suscipit voluptas repellendus
+                        molestias minima recusandae natus?
+                    </p>
+                </div>
+            </div>
+            <div class="single-acc">
+                <button
+                    @click="accordion !== 2 ? accordion = 2 : accordion = null"
+                >
+                    <!-- Chevron up -->
+                    <svg
+                        :class="accordion == 2 ? 'hide' : 'show' "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+                        />
+                    </svg>
+                    <!-- Chevron down -->
+                    <svg
+                        :class="accordion == 2 ? 'show' : 'hide' "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        />
+                    </svg>
+                    Accordion 2
+                </button>
+                <div
+                    class="acc-content"
+                    x-ref="container1"
+                    :style="accordion == 2 ? 'max-height:' + $refs.container1.scrollHeight + 'px' : '' "
+                >
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Vel ad odit quod at, suscipit voluptas repellendus
+                        molestias minima recusandae natus?
+                    </p>
+                </div>
+            </div>
+            <div class="single-acc">
+                <button
+                    @click="accordion !== 3 ? accordion = 3 : accordion = null"
+                >
+                    <!-- Chevron up -->
+                    <svg
+                        :class="accordion == 3 ? 'hide' : 'show' "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"
+                        />
+                    </svg>
+                    <!-- Chevron down -->
+                    <svg
+                        :class="accordion == 3 ? 'show' : 'hide' "
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512"
+                    >
+                        <path
+                            d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                        />
+                    </svg>
+                    Accordion 3
+                </button>
+                <div
+                    class="acc-content"
+                    x-ref="container1"
+                    :style="accordion == 3 ? 'max-height:' + $refs.container1.scrollHeight + 'px' : '' "
+                >
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Vel ad odit quod at, suscipit voluptas repellendus
+                        molestias minima recusandae natus?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
